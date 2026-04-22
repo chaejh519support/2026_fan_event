@@ -28,6 +28,7 @@
       color:var(--ink);
     }
     body{line-height:1.55}
+
     .hero{
       position:relative;
       overflow:hidden;
@@ -61,7 +62,7 @@
     .hero h1 span{
       display:block;
       margin-top:10px;
-      font-size:clamp(18px, 4.8vw, 28px);
+      font-size:clamp(18px, 4.5vw, 28px);
       color:#d7e3eb;
       letter-spacing:.02em;
       font-weight:600;
@@ -101,6 +102,7 @@
 
     .lang-grid{
       display:grid;
+      grid-template-columns: 1fr; /* 추가 */
       gap:14px;
     }
 
@@ -147,6 +149,9 @@
       line-height:1.15;
       letter-spacing:-.03em;
       color:#25323e;
+      display:flex;
+      align-items:center;
+      gap:8px;x
     }
 
     .lang-body{
@@ -205,41 +210,6 @@
       gap: 14px;
     }
 
-    .petals{
-      position:absolute;
-      left:50%;
-      top:52%;
-      transform:translate(-50%,-50%);
-      width:92px;
-      height:92px;
-    }
-    .petals i{
-      position:absolute;
-      left:50%;
-      top:50%;
-      width:20px;
-      height:34px;
-      margin:-17px 0 0 -10px;
-      background:#f8cf52;
-      border-radius:20px 20px 8px 8px;
-      transform-origin:50% 42px;
-    }
-    .petals i:nth-child(1){transform:rotate(0deg) translateY(-30px);}
-    .petals i:nth-child(2){transform:rotate(45deg) translateY(-30px);}
-    .petals i:nth-child(3){transform:rotate(90deg) translateY(-30px);}
-    .petals i:nth-child(4){transform:rotate(135deg) translateY(-30px);}
-    .petals i:nth-child(5){transform:rotate(180deg) translateY(-30px);}
-    .petals i:nth-child(6){transform:rotate(225deg) translateY(-30px);}
-    .petals i:nth-child(7){transform:rotate(270deg) translateY(-30px);}
-    .petals i:nth-child(8){transform:rotate(315deg) translateY(-30px);}
-
-    .flash-note{
-      margin:0;
-      font-size:14px;
-      color:#d5e2eb;
-      text-align:center;
-    }
-
     .flash .section-title {
       text-align: center;
     }
@@ -260,26 +230,6 @@
       height:auto;
     }
 
-    .tip-card{
-      align-self:stretch;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:16px;
-    }
-    .tip-card h3{
-      margin:0 0 10px;
-      font-size:18px;
-      color:#25323e;
-    }
-    .tips{
-      margin:0;
-      padding-left:18px;
-      color:var(--sub);
-      font-size:14px;
-    }
-    .tips li{margin:0 0 8px}
-
     .footer-note{
       margin-top:16px;
       text-align:center;
@@ -289,7 +239,7 @@
 
     @media (min-width: 760px){
       .panel{padding:26px 22px}
-      .lang-grid{grid-template-columns:repeat(3,1fr)}
+      /*.lang-grid{grid-template-columns:repeat(3,1fr)}*/
       .flash{grid-template-columns:1.2fr .8fr;align-items:stretch}
       .flash-box{min-height:280px}
     }
@@ -298,12 +248,11 @@
 <body>
   <header class="hero">
     <div class="hero-inner">
-      <div class="badge">2026 Fan Event</div>
+      <div class="badge">Fan Event Guide</div>
       <h1>
-        2026 FANMEETING
-        <span>CHAE JONG HYEOP</span>
+        The Way For US
+        <span>2026 CHAE JONG HYEOP FAN MEETING</span>
       </h1>
-      <p>Fan Event Guide · 한국어 · 日本語 · English</p>
     </div>
   </header>
 
@@ -312,65 +261,107 @@
       <div class="lang-grid">
         <article>
           <h2 class="section-title">이벤트 진행 순서</h2>  
-          <p class="section-desc">원활한 진행을 위해 아래 내용을<br>꼭 확인해주세요.</p>
+          <p class="section-desc">원활한 진행을 위해 순서를 꼭 확인해주세요.</p>
 
           <article class="lang-card">
             <div class="lang-head">
-              <span class="lang-tag">KOREAN</span>
-              <h3 class="lang-title">한국어</h3>
+              <h3 class="lang-title">
+                <span class="lang-tag">KOREAN</span> 한국어
+              </h3>
             </div>
             <div class="lang-body">
               <div class="step-list">
-                <div class="step"><div class="num">STEP<br>01</div><div><strong>손글씨 영상</strong><span>이벤트 시작과 함께 영상이 재생됩니다.</span></div></div>
-                <div class="step"><div class="num">STEP<br>02</div><div><strong>「그대만 있다면」 떼창</strong><span>현장 안내에 맞춰 함께 불러 주세요.</span></div></div>
-                <div class="step"><div class="num">STEP<br>03</div><div><strong>케이크 등장</strong><span>이벤트 흐름에 맞춰 함께 축하해 주세요.</span></div></div>
-                <div class="step"><div class="num">STEP<br>04</div><div><strong>슬로건 들어주기</strong><span>스태프 안내 타이밍에 맞춰 슬로건을 들어 주세요.</span></div></div>
-                <div class="step"><div class="num">STEP<br>05</div><div><strong>생일 축하 노래</strong><span>다 함께 생일 축하 노래를 불러 주세요.</span></div></div>
-                <div class="step"><div class="num">STEP<br>06</div><div><strong>플래시 라이트 이벤트</strong><span>마지막 곡에서 플래시 라이트를 켜 주세요.</span></div></div>
+                <div class="step">
+                  <div class="num">STEP<br>01</div>
+                  <div><strong>단체사진 타이밍 주목!</strong><span>영상 재생과 함께 이벤트가 시작됩니다.</span></div>
+                </div>
+                <div class="step">
+                  <div class="num">STEP<br>02</div>
+                  <div><strong>영상이 끝날 때 집중!</strong><span>화면에 나오는 가사를 보고 배우님을 향해 「그대만 있다면」을 함께 불러주세요.</span></div>
+                </div>
+                <div class="step">
+                  <div class="num">STEP<br>03</div>
+                  <div><strong>케이크 등장!🎂 & 생일 축하 노래 부르기!</strong><span>배우님의 생일을 축하하는 케이크가 무대 위로 등장할 예정이에요.<br>슬로건을 들고 생일 축하 노래를 부르며 다 함께 축하해 주세요!</span></div>
+                </div>
+                <div class="step">
+                  <div class="num">STEP<br>04</div>
+                  <div><strong>플래시 라이트 ON!</strong><span>배우님이 마지막 곡을 부를 때 플래시 라이트를 켜주세요!</span></div>
+                </div>
               </div>
             </div>
           </article>
         </article>
+      </div>
+    </section>
 
+    <section class="panel">
+      <div class="lang-grid">
         <article>
-          <h2 class="section-title">イベント進行順序</h2>  
-          <p class="section-desc">円滑な進行のため、以下の内容を必ず<br>ご確認ください。</p>
+          <h2 class="section-title">イベント進行ガイド</h2>  
+          <p class="section-desc">円滑な進行のため、必ずご確認ください！</p>
 
           <article class="lang-card">
             <div class="lang-head">
-              <span class="lang-tag">JAPANESE</span>
-              <h3 class="lang-title">日本語</h3>
+              <h3 class="lang-title">
+                <span class="lang-tag">JAPANESE</span> 日本語
+              </h3>
             </div>
             <div class="lang-body">
               <div class="step-list">
-                <div class="step"><div class="num">STEP<br>01</div><div><strong>手書き映像</strong><span>イベント開始とともに映像が流れます。</span></div></div>
-                <div class="step"><div class="num">STEP<br>02</div><div><strong>「그대만 있다면」合唱</strong><span>スタッフの案内に合わせて一緒に歌ってください。</span></div></div>
-                <div class="step"><div class="num">STEP<br>03</div><div><strong>ケーキ登場</strong><span>イベントの流れに合わせてお祝いしてください。</span></div></div>
-                <div class="step"><div class="num">STEP<br>04</div><div><strong>スローガンを掲げる</strong><span>案内のタイミングでスローガンを掲げてください。</span></div></div>
-                <div class="step"><div class="num">STEP<br>05</div><div><strong>バースデーソング</strong><span>みんなでバースデーソングを歌ってください。</span></div></div>
-                <div class="step"><div class="num">STEP<br>06</div><div><strong>フラッシュライトイベント</strong><span>最後の曲でフラッシュライトを点けてください。</span></div></div>
+                <div class="step">
+                  <div class="num">STEP<br>01</div>
+                  <div><strong>集合写真のタイミングに注目！</strong><span>映像の再生とともにイベントが始まります。</span></div>
+                </div>
+                <div class="step">
+                  <div class="num">STEP<br>02</div>
+                  <div><strong>映像が終わるタイミングに集中！</strong><span>画面に表示される歌詞を見ながら俳優に向けて「그대만 있다면」一緒に歌いましょう。</span></div>
+                </div>
+                <div class="step">
+                  <div class="num">STEP<br>03</div>
+                  <div><strong>ケーキ登場！🎂 & バースデーソングを歌おう</strong><span>俳優の誕生日を祝うケーキがステージに登場します。<br>スローガンを掲げて、バースデーソングを歌いながら一緒にお祝いしましょう！</span></div>
+                </div>
+                <div class="step">
+                  <div class="num">STEP<br>04</div>
+                  <div><strong>フラッシュライト ON！</strong><span>俳優が最後の曲を披露する際、フラッシュライトを点灯してください！</span></div>
+                </div>
               </div>
             </div>
           </article>
         </article>
+      </div>
+    </section>
 
+    <section class="panel">
+      <div class="lang-grid">
         <article>
-          <h2 class="section-title">Event Schedule</h2>
-          <p class="section-desc">To ensure a smooth event, please make sure to check the information below.</p>
+          <h2 class="section-title">Event Guide</h2>
+          <p class="section-desc">To ensure a smooth event, please check the steps below!</p>
 
           <article class="lang-card">
             <div class="lang-head">
-              <span class="lang-tag">ENGLISH</span>
-              <h3 class="lang-title">English</h3>
+              <h3 class="lang-title">
+                <span class="lang-tag">ENGLISH</span> English
+              </h3>
             </div>
             <div class="lang-body">
               <div class="step-list">
-                <div class="step"><div class="num">STEP<br>01</div><div><strong>Handwritten message video</strong><span>The opening video will begin with the event.</span></div></div>
-                <div class="step"><div class="num">STEP<br>02</div><div><strong>Sing-along to “그대만 있다면”</strong><span>Please sing together following the staff guide.</span></div></div>
-                <div class="step"><div class="num">STEP<br>03</div><div><strong>Cake entrance</strong><span>Please celebrate together as the event continues.</span></div></div>
-                <div class="step"><div class="num">STEP<br>04</div><div><strong>Raise the slogan</strong><span>Please hold up the slogan at the announced timing.</span></div></div>
-                <div class="step"><div class="num">STEP<br>05</div><div><strong>Birthday song</strong><span>Please sing the birthday song together.</span></div></div>
-                <div class="step"><div class="num">STEP<br>06</div><div><strong>Flashlight event</strong><span>Please turn on your flashlight during the last song.</span></div></div>
+                <div class="step">
+                  <div class="num">STEP<br>01</div>
+                  <div><strong>Get ready for the group photo!</strong><span>The event will begin with the video playback.</span></div>
+                </div>
+                <div class="step">
+                  <div class="num">STEP<br>02</div>
+                  <div><strong>Stay focused when the video ends!</strong><span>Follow the lyrics on the screen and sing 「If Only You Are There」 together for Jong Hyeop.</span></div>
+                </div>
+                <div class="step">
+                  <div class="num">STEP<br>03</div>
+                  <div><strong>Cake Time!🎂 & Sing Happy Birthday</strong><span>A birthday cake to celebrate Jong Hyeop will be brought on stage.<br>Please hold up the slogan and celebrate together while singing the birthday song!</span></div>
+                </div>
+                <div class="step">
+                  <div class="num">STEP<br>04</div>
+                  <div><strong>Flashlight ON!</strong><span>When Jong Hyeop performs the final song, please turn on your flash!</span></div>
+                </div>
+              </div>
               </div>
             </div>
           </article>
