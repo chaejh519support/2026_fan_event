@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026 CHAE JONG HYEOP FAN EVENT GUIDE</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-jp.min.css" />
+  <style>
+    :root{
+      --bg:#f5f1e8;
+      --paper:#fffdf9;
+      --ink:#24313d;
+      --sub:#667481;
+      --line:#eadfca;
+      --accent:#f3c84b;
+      --accent-soft:#fff4cf;
+      --card-shadow:0 12px 30px rgba(44,57,69,.08);
+      --radius:24px;
+      --max:860px;
+    }
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;
+      padding:0;
+      font-family:"Pretendard JP",sans-serif;
+      font-feature-settings:"ss05";
+      background:linear-gradient(180deg,#f8f5ee 0%, #f3eee4 100%);
+      color:var(--ink);
+    }
+    body{line-height:1.55}
+    .hero{
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 90% 20%, rgba(243,200,75,.22), transparent 18%),
+        radial-gradient(circle at 12% 88%, rgba(243,200,75,.18), transparent 16%),
+        linear-gradient(135deg, #334654 0%, #22323f 100%);
+      color:#fff;
+      padding:42px 20px 34px;
+    }
+    .hero-inner{
+      max-width:var(--max);
+      margin:0 auto;
+    }
+    .badge{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      color:#e5edf3;
+      font-size:12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .hero h1{
+      margin:18px 0 0;
+      font-size:clamp(34px, 9vw, 64px);
+      line-height:.96;
+      letter-spacing:-.05em;
+    }
+    .hero h1 span{
+      display:block;
+      margin-top:10px;
+      font-size:clamp(18px, 4.8vw, 28px);
+      color:#d7e3eb;
+      letter-spacing:.02em;
+      font-weight:600;
+    }
+    .hero p{
+      margin:16px 0 0;
+      color:#d3dfe7;
+      font-size:14px;
+    }
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:20px 16px 44px;
+    }
+
+    .panel{
+      background:var(--paper);
+      border:1px solid rgba(234,223,202,.8);
+      border-radius:var(--radius);
+      box-shadow:var(--card-shadow);
+      padding:22px 18px;
+      margin-top:16px;
+    }
+
+    h2.section-title{
+      margin:0 0 8px;
+      font-size:24px;
+      line-height:1.2;
+      letter-spacing:-.03em;
+    }
+    .section-desc{
+      margin:0 0 18px;
+      color:var(--sub);
+      font-size:12px;
+    }
+
+    .lang-grid{
+      display:grid;
+      gap:14px;
+    }
+
+    .lang-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      overflow:hidden;
+    }
+
+    .lang-head{
+      padding:14px 16px;
+      background:linear-gradient(180deg, #fff8e7 0%, #fff2ca 100%);
+      border-bottom:1px solid #f3e0a0;
+    }
+
+    .lang-tag{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.72);
+      border:1px solid rgba(180,145,35,.14);
+      color:#6a5712;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.04em;
+    }
+
+    .lang-tag-02{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background:var(--accent-soft);
+      border:1px solid #efe6d9;
+      color:#6a5712;
+      font-size:20px;
+      font-weight:700;
+      letter-spacing:.04em;
+    }
+
+    .lang-title{
+      margin:10px 0 0;
+      font-size:22px;
+      line-height:1.15;
+      letter-spacing:-.03em;
+      color:#25323e;
+    }
+
+    .lang-body{
+      padding:16px;
+    }
+
+    .step-list{
+      display:grid;
+      gap:10px;
+    }
+
+    .step{
+      display:grid;
+      grid-template-columns:56px 1fr;
+      gap:12px;
+      align-items:flex-start;
+      padding:12px;
+      border-radius:16px;
+      background:#fcfbf7;
+      border:1px solid #efe6d9;
+    }
+
+    .num{
+      width:56px;
+      height:56px;
+      border-radius:16px;
+      background:var(--accent-soft);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      color:#6c5810;
+      font-size:14px;
+      line-height:1.05;
+      text-align:center;
+      border:1px solid #f1df9f;
+    }
+
+    .step strong{
+      display:block;
+      font-size:16px;
+      color:#263440;
+    }
+
+    .step span{
+      display:block;
+      margin-top:3px;
+      color:var(--sub);
+      font-size:13px;
+    }
+
+    .flash{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .petals{
+      position:absolute;
+      left:50%;
+      top:52%;
+      transform:translate(-50%,-50%);
+      width:92px;
+      height:92px;
+    }
+    .petals i{
+      position:absolute;
+      left:50%;
+      top:50%;
+      width:20px;
+      height:34px;
+      margin:-17px 0 0 -10px;
+      background:#f8cf52;
+      border-radius:20px 20px 8px 8px;
+      transform-origin:50% 42px;
+    }
+    .petals i:nth-child(1){transform:rotate(0deg) translateY(-30px);}
+    .petals i:nth-child(2){transform:rotate(45deg) translateY(-30px);}
+    .petals i:nth-child(3){transform:rotate(90deg) translateY(-30px);}
+    .petals i:nth-child(4){transform:rotate(135deg) translateY(-30px);}
+    .petals i:nth-child(5){transform:rotate(180deg) translateY(-30px);}
+    .petals i:nth-child(6){transform:rotate(225deg) translateY(-30px);}
+    .petals i:nth-child(7){transform:rotate(270deg) translateY(-30px);}
+    .petals i:nth-child(8){transform:rotate(315deg) translateY(-30px);}
+
+    .flash-note{
+      margin:0;
+      font-size:14px;
+      color:#d5e2eb;
+      text-align:center;
+    }
+
+    .flash .section-title {
+      text-align: center;
+    }
+
+    .flash-image-wrap{
+      border-radius:22px;
+      overflow:hidden;
+      background:#f7f7f7;
+      border:1px solid #e7dcc6;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.4);
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .flash-image{
+      display:block;
+      width:100%;
+      height:auto;
+    }
+
+    .tip-card{
+      align-self:stretch;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:16px;
+    }
+    .tip-card h3{
+      margin:0 0 10px;
+      font-size:18px;
+      color:#25323e;
+    }
+    .tips{
+      margin:0;
+      padding-left:18px;
+      color:var(--sub);
+      font-size:14px;
+    }
+    .tips li{margin:0 0 8px}
+
+    .footer-note{
+      margin-top:16px;
+      text-align:center;
+      color:#7a8792;
+      font-size:12px;
+    }
+
+    @media (min-width: 760px){
+      .panel{padding:26px 22px}
+      .lang-grid{grid-template-columns:repeat(3,1fr)}
+      .flash{grid-template-columns:1.2fr .8fr;align-items:stretch}
+      .flash-box{min-height:280px}
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="badge">2026 Fan Event</div>
+      <h1>
+        2026 FANMEETING
+        <span>CHAE JONG HYEOP</span>
+      </h1>
+      <p>Fan Event Guide · 한국어 · 日本語 · English</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <div class="lang-grid">
+        <article>
+          <h2 class="section-title">이벤트 진행 순서</h2>  
+          <p class="section-desc">원활한 진행을 위해 아래 내용을<br>꼭 확인해주세요.</p>
+
+          <article class="lang-card">
+            <div class="lang-head">
+              <span class="lang-tag">KOREAN</span>
+              <h3 class="lang-title">한국어</h3>
+            </div>
+            <div class="lang-body">
+              <div class="step-list">
+                <div class="step"><div class="num">STEP<br>01</div><div><strong>손글씨 영상</strong><span>이벤트 시작과 함께 영상이 재생됩니다.</span></div></div>
+                <div class="step"><div class="num">STEP<br>02</div><div><strong>「그대만 있다면」 떼창</strong><span>현장 안내에 맞춰 함께 불러 주세요.</span></div></div>
+                <div class="step"><div class="num">STEP<br>03</div><div><strong>케이크 등장</strong><span>이벤트 흐름에 맞춰 함께 축하해 주세요.</span></div></div>
+                <div class="step"><div class="num">STEP<br>04</div><div><strong>슬로건 들어주기</strong><span>스태프 안내 타이밍에 맞춰 슬로건을 들어 주세요.</span></div></div>
+                <div class="step"><div class="num">STEP<br>05</div><div><strong>생일 축하 노래</strong><span>다 함께 생일 축하 노래를 불러 주세요.</span></div></div>
+                <div class="step"><div class="num">STEP<br>06</div><div><strong>플래시 라이트 이벤트</strong><span>마지막 곡에서 플래시 라이트를 켜 주세요.</span></div></div>
+              </div>
+            </div>
+          </article>
+        </article>
+
+        <article>
+          <h2 class="section-title">イベント進行順序</h2>  
+          <p class="section-desc">円滑な進行のため、以下の内容を必ず<br>ご確認ください。</p>
+
+          <article class="lang-card">
+            <div class="lang-head">
+              <span class="lang-tag">JAPANESE</span>
+              <h3 class="lang-title">日本語</h3>
+            </div>
+            <div class="lang-body">
+              <div class="step-list">
+                <div class="step"><div class="num">STEP<br>01</div><div><strong>手書き映像</strong><span>イベント開始とともに映像が流れます。</span></div></div>
+                <div class="step"><div class="num">STEP<br>02</div><div><strong>「그대만 있다면」合唱</strong><span>スタッフの案内に合わせて一緒に歌ってください。</span></div></div>
+                <div class="step"><div class="num">STEP<br>03</div><div><strong>ケーキ登場</strong><span>イベントの流れに合わせてお祝いしてください。</span></div></div>
+                <div class="step"><div class="num">STEP<br>04</div><div><strong>スローガンを掲げる</strong><span>案内のタイミングでスローガンを掲げてください。</span></div></div>
+                <div class="step"><div class="num">STEP<br>05</div><div><strong>バースデーソング</strong><span>みんなでバースデーソングを歌ってください。</span></div></div>
+                <div class="step"><div class="num">STEP<br>06</div><div><strong>フラッシュライトイベント</strong><span>最後の曲でフラッシュライトを点けてください。</span></div></div>
+              </div>
+            </div>
+          </article>
+        </article>
+
+        <article>
+          <h2 class="section-title">Event Schedule</h2>
+          <p class="section-desc">To ensure a smooth event, please make sure to check the information below.</p>
+
+          <article class="lang-card">
+            <div class="lang-head">
+              <span class="lang-tag">ENGLISH</span>
+              <h3 class="lang-title">English</h3>
+            </div>
+            <div class="lang-body">
+              <div class="step-list">
+                <div class="step"><div class="num">STEP<br>01</div><div><strong>Handwritten message video</strong><span>The opening video will begin with the event.</span></div></div>
+                <div class="step"><div class="num">STEP<br>02</div><div><strong>Sing-along to “그대만 있다면”</strong><span>Please sing together following the staff guide.</span></div></div>
+                <div class="step"><div class="num">STEP<br>03</div><div><strong>Cake entrance</strong><span>Please celebrate together as the event continues.</span></div></div>
+                <div class="step"><div class="num">STEP<br>04</div><div><strong>Raise the slogan</strong><span>Please hold up the slogan at the announced timing.</span></div></div>
+                <div class="step"><div class="num">STEP<br>05</div><div><strong>Birthday song</strong><span>Please sing the birthday song together.</span></div></div>
+                <div class="step"><div class="num">STEP<br>06</div><div><strong>Flashlight event</strong><span>Please turn on your flashlight during the last song.</span></div></div>
+              </div>
+            </div>
+          </article>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="flash">
+        <div>
+          <span class="lang-tag-02">한국어 / 日本語 / English</span>
+        </div>  
+        <div class="flash-image-wrap">
+            <img class="flash-image" src="./images/flashlight_all_color_change.png" alt="플래시 라이트 부착 예시 이미지"/>
+          </div>
+      </div>
+    </section>
+    <p class="footer-note">이 페이지는 팬미팅 완료 후 삭제됩니다.<br><br>- 채바라기 -</p>
+  </main>
+</body>
+</html>
