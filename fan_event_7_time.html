@@ -7,144 +7,200 @@
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-jp.min.css" />
   <style>
     :root{
-      --bg:#f5f1e8;
-      --paper:#fffdf9;
-      --ink:#24313d;
-      --sub:#667481;
-      --line:#eadfca;
-      --accent:#f3c84b;
-      --accent-soft:#fff4cf;
-      --card-shadow:0 12px 30px rgba(44,57,69,.08);
-      --radius:24px;
-      --max:860px;
+      --bg:#eef6ef;
+      --paper:#ffffff;
+      --ink:#24352c;
+      --sub:#4c6255;
+      --line:#b9cfbf;
+      --line-yellow:#eadfca;
+      --hero-1:#3f5f50;
+      --hero-2:#233a31;
+      --accent:#84b497;
+      --accent-strong:#457a5a;
+      --accent-soft:#dceee2;
+      --gold-soft:#e5f2e8;
+      --gold-line:#eadfca;
+      --shadow:0 16px 38px rgba(45,52,68,.10);
+      --radius-xl:28px;
+      --radius-lg:22px;
+      --max:1040px;
     }
+
     *{box-sizing:border-box}
+
     html,body{
       margin:0;
       padding:0;
       font-family:"Pretendard JP",sans-serif;
       font-feature-settings:"ss05";
-      background:linear-gradient(180deg,#f8f5ee 0%, #f3eee4 100%);
       color:var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(124,174,142,.14), transparent 26%),
+        linear-gradient(180deg, #f7fbf7 0%, #edf5ee 100%);
     }
-    body{line-height:1.55}
+
+    body{line-height:1.58}
 
     .hero{
       position:relative;
       overflow:hidden;
       background:
-        radial-gradient(circle at 90% 20%, rgba(243,200,75,.22), transparent 18%),
-        radial-gradient(circle at 12% 88%, rgba(243,200,75,.18), transparent 16%),
-        linear-gradient(135deg, #334654 0%, #22323f 100%);
+        radial-gradient(circle at 85% 18%, rgba(255,255,255,.14), transparent 16%),
+        radial-gradient(circle at 10% 90%, rgba(124,174,142,.22), transparent 18%),
+        linear-gradient(135deg, var(--hero-1) 0%, var(--hero-2) 100%);
       color:#fff;
-      padding:42px 20px 34px;
+      padding:54px 20px 42px;
     }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:auto -60px -80px auto;
+      width:240px;
+      height:240px;
+      border-radius:50%;
+      background:rgba(255,255,255,.06);
+      filter:blur(4px);
+    }
+
     .hero-inner{
       max-width:var(--max);
       margin:0 auto;
+      position:relative;
+      z-index:1;
     }
+
     .badge{
-      display:inline-block;
-      padding:8px 12px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 14px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.18);
-      color:#e5edf3;
+      border:1px solid rgba(255,255,255,.22);
+      color:#eef8f0;
+      background:rgba(255,255,255,.08);
       font-size:12px;
       letter-spacing:.08em;
       text-transform:uppercase;
+      backdrop-filter:blur(6px);
     }
+
     .hero h1{
       margin:18px 0 0;
-      font-size:clamp(34px, 9vw, 64px);
-      line-height:.96;
+      font-size:clamp(34px, 9vw, 62px);
+      line-height:.95;
       letter-spacing:-.05em;
     }
+
     .hero h1 span{
       display:block;
-      margin-top:10px;
-      font-size:clamp(18px, 4.5vw, 28px);
-      color:#d7e3eb;
+      margin-top:12px;
+      font-size:clamp(18px, 4.3vw, 28px);
+      color:#d6eadc;
       letter-spacing:.02em;
       font-weight:600;
     }
+
     .hero p{
       margin:16px 0 0;
-      color:#d3dfe7;
+      max-width:620px;
       font-size:14px;
+      color:#deede3;
     }
 
     .wrap{
       max-width:var(--max);
       margin:0 auto;
-      padding:20px 16px 44px;
+      padding:24px 16px 50px;
     }
 
     .panel{
       background:var(--paper);
-      border:1px solid rgba(234,223,202,.8);
-      border-radius:var(--radius);
-      box-shadow:var(--card-shadow);
-      padding:22px 18px;
-      margin-top:16px;
+      border:1px solid var(--line);
+      border-radius:var(--radius-xl);
+      box-shadow:var(--shadow);
+      padding:24px 18px;
+      margin-top:18px;
     }
 
-    h2.section-title{
-      margin:10px 0 0;
-      font-size:22px;
-      line-height:1.2;
-      letter-spacing:-.03em;
-      color:#25323e;
+    .lang-block + .lang-block{
+      margin-top:18px;
+    }
+
+    .lang-label-row{
       display:flex;
       align-items:center;
-      gap:8px;
-    }
-    .section-desc{
-      margin:6px 0 0;
-      color:var(--sub);
-      font-size:14px;
-      font-weight:700;
-    }
-
-    .lang-grid{
-      display:grid;
-      grid-template-columns: 1fr; /* 추가 */
-      gap:14px;
-    }
-
-    .lang-card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:22px;
-      overflow:hidden;
-    }
-
-    .lang-head{
-      padding:14px 16px;
-      background:linear-gradient(180deg, #fff8e7 0%, #fff2ca 100%);
-      border-bottom:1px solid #f3e0a0;
+      gap:10px;
+      margin-bottom:14px;
     }
 
     .lang-tag{
       display:inline-block;
-      padding:6px 10px;
+      padding:7px 11px;
       border-radius:999px;
-      background:rgba(255,255,255,.72);
-      border:1px solid rgba(180,145,35,.72);
-      color:#6a5712;
+      background:var(--accent-soft);
+      border:1px solid #9fbea8;
+      color:#2f5b3e;
       font-size:12px;
-      font-weight:700;
-      letter-spacing:.04em;
+      font-weight:800;
+      letter-spacing:.05em;
     }
 
     h3.lang-title{
-      margin: 0 0 8px;
-      font-size:22px;
+      margin:0;
+      font-size:24px;
       line-height:1.15;
       letter-spacing:-.03em;
-      color:#25323e;
+      color:#264033;
+    }
+
+    .lang-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+    }
+
+    .lang-card-green{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius-lg);
+      overflow:hidden;
+    }
+
+    .lang-card-yellow{
+      background:#fff;
+      border:1px solid var(--line-yellow);
+      border-radius:var(--radius-lg);
+      overflow:hidden;
+    }
+
+    .lang-head{
+      padding:16px 16px;
+      background:linear-gradient(180deg, #f3fbf5 0%, #dceee2 100%);
+      border-bottom:1px solid #adc7b5;
+    }
+
+    .lang-head.image-head{
+      background:linear-gradient(180deg, #fffaf0 0%, #fff3dc 100%);
+      border-bottom:1px solid var(--gold-line);
+    }
+
+    h2.section-title{
+      margin:0;
+      font-size:21px;
+      line-height:1.25;
+      letter-spacing:-.03em;
+      color:#264033;
       display:flex;
       align-items:center;
       gap:8px;
+    }
+
+    .section-desc{
+      margin:6px 0 0;
+      color:var(--sub);
+      font-size:13px;
+      font-weight:700;
     }
 
     .lang-body{
@@ -158,84 +214,71 @@
 
     .step{
       display:grid;
-      grid-template-columns:56px 1fr;
+      grid-template-columns:62px 1fr;
       gap:12px;
       align-items:flex-start;
-      padding:12px;
-      border-radius:16px;
-      background:#fcfbf7;
-      border:1px solid #efe6d9;
+      padding:13px;
+      border-radius:18px;
+      background:#f7fbf8;
+      border:1px solid #bfd4c5;
     }
 
     .num{
-      width:56px;
-      height:56px;
-      border-radius:16px;
+      width:62px;
+      height:62px;
+      border-radius:18px;
       background:var(--accent-soft);
       display:flex;
       align-items:center;
       justify-content:center;
-      font-weight:800;
-      color:#6c5810;
+      font-weight:900;
+      color:#315641;
       font-size:14px;
       line-height:1.05;
       text-align:center;
-      border:1px solid #f1df9f;
+      border:1px solid #a9c4b1;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.85);
     }
 
     .step strong{
       display:block;
       font-size:16px;
-      color:#263440;
+      color:#22362a;
     }
 
     .step span{
       display:block;
-      margin-top:3px;
+      margin-top:4px;
       color:var(--sub);
       font-size:13px;
     }
 
-    .flash{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .flash .section-title {
-      text-align: center;
-    }
-
-    .flash-image-wrap{
-      border-radius:22px;
-      overflow:hidden;
-      background:#fff;
-      border:1px solid var(--line);
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,.4);
-      width: 100%;
-      max-width: 600px;
-      margin: 0 auto;
+    .flash-box{
+      background:#fffdf9;
+      border:1px dashed var(--gold-line);
+      border-radius:18px;
+      padding:12px;
     }
 
     .flash-image{
       display:block;
       width:100%;
       height:auto;
+      border-radius:14px;
     }
 
     .footer-note{
-      margin-top:16px;
+      margin-top:18px;
       text-align:center;
-      color:#7a8792;
+      color:#607064;
       font-size:12px;
     }
 
-    @media (min-width: 760px){
-      .panel{padding:26px 22px}
-      /*.lang-grid{grid-template-columns:repeat(3,1fr)}*/
-      .flash{grid-template-columns:1.2fr .8fr;align-items:stretch}
-      .flash-box{min-height:280px}
+    @media (min-width: 820px){
+      .wrap{padding:28px 18px 60px}
+      .panel{padding:28px 22px}
+      .lang-grid{grid-template-columns:1.08fr .92fr}
+      .intro-card{padding:20px 22px}
     }
   </style>
 </head>
@@ -252,15 +295,15 @@
 
   <main class="wrap">
     <section class="panel">
-      <div class="lang-grid">
-        <article>
-          <h3 class="lang-title">
-            <span class="lang-tag">KOREAN</span> 한국어
-          </h3>
-
-          <article class="lang-card">
+      <div class="lang-block">
+        <div class="lang-label-row">
+          <span class="lang-tag">KOREAN</span>
+          <h3 class="lang-title">한국어</h3>
+        </div>
+        <div class="lang-grid">
+          <article class="lang-card-green">
             <div class="lang-head">
-              <h2 class="section-title">이벤트 진행 순서</h2>  
+              <h2 class="section-title">이벤트 진행 순서</h2>
               <p class="section-desc">원활한 진행을 위해 순서를 꼭 확인해주세요.</p>
             </div>
             <div class="lang-body">
@@ -284,34 +327,32 @@
               </div>
             </div>
           </article>
-        </article>
 
-        <article class="lang-card">
-          <div class="lang-head">
-            <h2 class="section-title">플래시 라이트 부착 위치</h2>  
-            <p class="section-desc">정확한 위치에 붙여주시길 바랍니다.</p>
-          </div>
-          <div class="lang-body">
-            <div class="flash"> 
-              <div>
+          <article class="lang-card-yellow">
+            <div class="lang-head image-head">
+              <h2 class="section-title">플래시 라이트 부착 위치</h2>
+              <p class="section-desc">정확한 위치에 붙여주시길 바랍니다.</p>
+            </div>
+            <div class="lang-body">
+              <div class="flash-box">
                 <img class="flash-image" src="./images/flashlight_kr.png" alt="플래시 라이트 부착 예시 이미지"/>
               </div>
             </div>
-          </div>
-        </article>
+          </article>
+        </div>
       </div>
     </section>
 
     <section class="panel">
-      <div class="lang-grid">
-        <article>
-          <h3 class="lang-title">
-            <span class="lang-tag">JAPANESE</span> 日本語
-          </h3>
-
-          <article class="lang-card">
+      <div class="lang-block">
+        <div class="lang-label-row">
+          <span class="lang-tag">JAPANESE</span>
+          <h3 class="lang-title">日本語</h3>
+        </div>
+        <div class="lang-grid">
+          <article class="lang-card-green">
             <div class="lang-head">
-              <h2 class="section-title">イベント進行ガイド</h2>  
+              <h2 class="section-title">イベント進行ガイド</h2>
               <p class="section-desc">円滑な進行のため、必ずご確認ください！</p>
             </div>
             <div class="lang-body">
@@ -319,7 +360,7 @@
                 <div class="step">
                   <div class="num">STEP<br>01</div>
                   <div><strong>集合写真のタイミングに注目！</strong><span>映像の再生とともにイベントが始まります。</span></div>
-               </div>
+                </div>
                 <div class="step">
                   <div class="num">STEP<br>02</div>
                   <div><strong>映像が終わるタイミングに集中！</strong><span>画面に表示される歌詞を見ながら俳優に向けて「그대만 있다면」一緒に歌いましょう。</span></div>
@@ -335,32 +376,30 @@
               </div>
             </div>
           </article>
-        </article>
 
-        <article class="lang-card">
-          <div class="lang-head">
-            <h2 class="section-title">フラッシュライトの装着位置</h2>  
-            <p class="section-desc">正しい位置に貼り付けてください。</p>
-          </div>
-          <div class="lang-body">
-            <div class="flash"> 
-              <div>
-                <img class="flash-image" src="./images/flashlight_jp.png" alt="플래시 라이트 부착 예시 이미지"/>
+          <article class="lang-card-yellow">
+            <div class="lang-head image-head">
+              <h2 class="section-title">フラッシュライトの装着位置</h2>
+              <p class="section-desc">正しい位置に貼り付けてください。</p>
+            </div>
+            <div class="lang-body">
+              <div class="flash-box">
+                <img class="flash-image" src="./images/flashlight_jp.png" alt="フラッシュライト装着位置の例"/>
               </div>
             </div>
-          </div>
-        </article>
+          </article>
+        </div>
       </div>
     </section>
 
     <section class="panel">
-      <div class="lang-grid">
-        <article>
-          <h3 class="lang-title">
-            <span class="lang-tag">ENGLISH</span> English
-          </h3>
-
-          <article class="lang-card">
+      <div class="lang-block">
+        <div class="lang-label-row">
+          <span class="lang-tag">ENGLISH</span>
+          <h3 class="lang-title">English</h3>
+        </div>
+        <div class="lang-grid">
+          <article class="lang-card-green">
             <div class="lang-head">
               <h2 class="section-title">Event Guide</h2>
               <p class="section-desc">To ensure a smooth event, please check the steps below!</p>
@@ -386,21 +425,19 @@
               </div>
             </div>
           </article>
-        </article>
 
-        <article class="lang-card">
-          <div class="lang-head">
-            <h2 class="section-title">Flashlight attachment guide.</h2>  
-            <p class="section-desc">Please attach it in the correct position.</p>
-          </div>
-          <div class="lang-body">
-            <div class="flash"> 
-              <div>
-                <img class="flash-image" src="./images/flashlight_en.png" alt="플래시 라이트 부착 예시 이미지"/>
+          <article class="lang-card-yellow">
+            <div class="lang-head image-head">
+              <h2 class="section-title">Flashlight attachment guide</h2>
+              <p class="section-desc">Please attach it in the correct position.</p>
+            </div>
+            <div class="lang-body">
+              <div class="flash-box">
+                <img class="flash-image" src="./images/flashlight_en.png" alt="Flashlight attachment example"/>
               </div>
             </div>
-          </div>
-        </article>
+          </article>
+        </div>
       </div>
     </section>
 
